@@ -1,3 +1,5 @@
+> This project has been succeeded by the [authsite](https://github.com/progrium/authsite) CLI tool.
+
 # gh-pages-auth
 Auth0 and GitHub Pages bootstrapper for self-modifying static sites
 
