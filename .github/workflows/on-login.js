@@ -1,9 +1,9 @@
 
 exports.onExecutePostLogin = async (event, api) => {
   // allow everbody to login
-  if ( false && event.user.nickname && event.user.nickname !== event.secrets.admin) {
-    api.access.deny(`Access to ${event.client.name} is not allowed for ${event.user.nickname}`);
-  } else {
+  // if ( event.user.nickname && event.user.nickname !== event.secrets.admin) {
+  //   api.access.deny(`Access to ${event.client.name} is not allowed for ${event.user.nickname}`);
+  // } else {
     const AuthenticationClient = require("auth0").AuthenticationClient;
     const auth = new AuthenticationClient({
       domain: event.secrets.domain,
@@ -19,5 +19,5 @@ exports.onExecutePostLogin = async (event, api) => {
     const resp = await management.users.get({id: event.user.user_id});
     api.user.setUserMetadata("gh_token", resp.data.identities[0].access_token);
     
-  }
+  // }
 };
