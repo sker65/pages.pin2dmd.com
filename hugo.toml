@@ -1,0 +1,12 @@
+baseURL = 'https://pages.pin2dmd.com/'
+languageCode = 'en-us'
+title = 'A Hugo Site'
+
+# Change the default theme
+theme = "hugo-theme-relearn"
+[params]
+  themeVariantAuto = ['learn', 'neon']
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]

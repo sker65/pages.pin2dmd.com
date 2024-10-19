@@ -1,0 +1,22 @@
+          <a id="R-logo" class="R-default" href="{{ partial "permalink.gotmpl" (dict "to" .Site.Home) }}">
+{{ .Site.Params.linkTitle | default .Site.Title }}
+          </a>
+<div id="currentUser">Username</div>
+<div id="login_btn" class="searchbox">Login</div>
+<script>
+  const div = document.getElementById("currentUser");
+  const btn = document.getElementById("login_btn");
+  console.log(div, auth);
+  if (window.auth.isAuthenticated()) {
+    const user = auth.currentUser();
+    console.log(user);
+    div.style.visibility='visible';
+    div.innerHTML = `${user.email}`;
+    btn.innerHTML = 'Logout';
+    btn.onclick = auth.logout;
+  } else {
+    div.style.visibility='hidden';
+    btn.innerHTML = 'Login';
+    btn.onclick = auth.login;
+  }
+</script>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home Page :: A Hugo Site</title>
+    <link>http://localhost:1313/index.html</link>
+    <description>Documentation This documentation enables you to integrate with our service easily.&#xA;Documentation Summary Getting StartedChapter 1 Getting Started Build a documentation website for your service using Hugo and hugo-theme-learn in less than an hour.&#xA;--- title: Example Diagram --- graph LR; A[Hard edge] --&gt;|Link text| B(Round edge) B --&gt; C{&lt;strong&gt;Decision&lt;/strong&gt;} C --&gt;|One| D[Result one] C --&gt;|Two| E[Result two]&#xA;InstallationThe following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you learn more about it by following this great documentation for beginners.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Sep 2019 01:53:09 +0330</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started</title>
+      <link>http://localhost:1313/getting-started/index.html</link>
+      <pubDate>Wed, 25 Sep 2019 01:53:09 +0330</pubDate>
+      <guid>http://localhost:1313/getting-started/index.html</guid>
+      <description>Chapter 1 Getting Started Build a documentation website for your service using Hugo and hugo-theme-learn in less than an hour.&#xA;--- title: Example Diagram --- graph LR; A[Hard edge] --&gt;|Link text| B(Round edge) B --&gt; C{&lt;strong&gt;Decision&lt;/strong&gt;} C --&gt;|One| D[Result one] C --&gt;|Two| E[Result two]</description>
+    </item>
+  </channel>
+</rss>

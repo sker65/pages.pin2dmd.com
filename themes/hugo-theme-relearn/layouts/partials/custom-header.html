@@ -1,0 +1,20 @@
+<!-- Partial intended to be overwritten to add custom headers, like CSS or any other info
+<style>
+   /* Custom css */
+</style>
+-->
+<script src="/auth/api.js"></script>
+<script>
+//   import * as auth from "/auth/api.js";
+   var auth = { login, logout, isAuthenticated, currentUser, accessToken};
+   window.login = auth.login;
+   window.logout = auth.logout;
+   window.auth = auth;
+   if (auth.isAuthenticated()) {
+    auth.authenticated = true;
+     //document.body.innerHTML = `Welcome, ${auth.currentUser().nickname}. <a href="javascript:void(0)" onclick="logout()">Logout</a>`;
+   } else {
+    auth.authenticated = false;
+     //document.body.innerHTML = `Welcome, anonymous. <a href="javascript:void(0)" onclick="login()">Login</a>`;
+   }
+ </script>

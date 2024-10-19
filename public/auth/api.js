@@ -1,5 +1,5 @@
 
-export function login(redirect) {
+ function login(redirect) {
   if (redirect) {
     localStorage.setItem("auth:redirect", redirect);
   } else {
@@ -8,7 +8,7 @@ export function login(redirect) {
   window.location.href = "/auth/";
 }
 
-export function logout(redirect) {
+ function logout(redirect) {
   if (redirect) {
     localStorage.setItem("auth:redirect", redirect);
   } else {
@@ -17,7 +17,7 @@ export function logout(redirect) {
   window.location.href = "/auth/?logout";
 }
 
-export function isAuthenticated() {
+ function isAuthenticated() {
   const login = localStorage.getItem("auth:login");
   if (login) {
     return true;
@@ -26,7 +26,7 @@ export function isAuthenticated() {
   }
 }
 
-export function currentUser() {
+ function currentUser() {
   const login = localStorage.getItem("auth:login");
   if (!login) {
     return null;
@@ -34,7 +34,7 @@ export function currentUser() {
   return JSON.parse(login)["user"];
 }
 
-export function accessToken() {
+ function accessToken() {
   const login = localStorage.getItem("auth:login");
   if (!login) {
     return null;
