@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.136.2">
@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Categories :: A Hugo Site">
-    <meta property="og:url" content="http://localhost:1313/categories/index.html">
+    <meta property="og:url" content="https://pages.pin2dmd.com/categories/index.html">
     <meta property="og:site_name" content="A Hugo Site">
     <meta property="og:title" content="Categories :: A Hugo Site">
     <meta property="og:locale" content="en_us">
@@ -17,21 +17,21 @@
     <meta itemprop="name" content="Categories :: A Hugo Site">
     <title>Categories :: A Hugo Site</title>
     <link href="/categories/index.xml" rel="alternate" type="application/rss+xml" title="Categories :: A Hugo Site">
-    <link href="/css/fontawesome-all.min.css?1729376258" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1729376258" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1729376258" rel="stylesheet">
-    <link href="/css/auto-complete.css?1729376258" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1729376258" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1729376258" rel="stylesheet">
-    <link href="/css/fonts.css?1729376258" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1729376258" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1729376258" rel="stylesheet">
-    <link href="/css/theme-auto.css?1729376258" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-auto.css?1729376258" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/print.css?1729376258" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1729376258"></script>
+    <link href="/css/fontawesome-all.min.css?1729379283" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1729379283" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1729379283" rel="stylesheet">
+    <link href="/css/auto-complete.css?1729379283" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1729379283" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1729379283" rel="stylesheet">
+    <link href="/css/fonts.css?1729379283" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1729379283" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1729379283" rel="stylesheet">
+    <link href="/css/theme-auto.css?1729379283" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-auto.css?1729379283" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/print.css?1729379283" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1729379283"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
       window.relearn.relBaseUri='..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.absBaseUri='https:\/\/pages.pin2dmd.com';
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       // variant stuff
@@ -46,13 +46,18 @@
       window.T_No_results_found = `No results found for "{0}"`;
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
-<script type="module">
-   import * as auth from "./auth/api.js";
+<script src="/auth/api.js"></script>
+<script>
+
+   var auth = { login, logout, isAuthenticated, currentUser, accessToken};
    window.login = auth.login;
    window.logout = auth.logout;
+   window.auth = auth;
    if (auth.isAuthenticated()) {
+    auth.authenticated = true;
      
    } else {
+    auth.authenticated = false;
      
    }
  </script>
@@ -115,9 +120,29 @@
           <a id="R-logo" class="R-default" href="/index.html">
 A Hugo Site
           </a>
+<div id="currentUser">Username</div>
+<div id="login_btn" class="searchbox">Login</div>
+<script>
+  const div = document.getElementById("currentUser");
+  const btn = document.getElementById("login_btn");
+  console.log(div, auth);
+  if (window.auth.isAuthenticated()) {
+    const user = auth.currentUser();
+    console.log(user);
+    div.style.visibility='visible';
+    div.innerHTML = `${user.email}`;
+    btn.innerHTML = 'Logout';
+    btn.onclick = auth.logout;
+  } else {
+    div.style.visibility='hidden';
+    btn.innerHTML = 'Login';
+    btn.onclick = auth.login;
+  }
+</script>
+
         </div>
         <script>
-          window.index_js_url="/searchindex.js?1729376258";
+          window.index_js_url="/searchindex.js?1729379283";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -130,12 +155,12 @@ A Hugo Site
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1729376258" defer></script>
-        <script src="/js/lunr/lunr.min.js?1729376258" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1729376258" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1729376258" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1729376258" defer></script>
-        <script src="/js/search.js?1729376258" defer></script>
+        <script src="/js/auto-complete.js?1729379283" defer></script>
+        <script src="/js/lunr/lunr.min.js?1729379283" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1729379283" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1729379283" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1729379283" defer></script>
+        <script src="/js/search.js?1729379283" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -199,8 +224,8 @@ A Hugo Site
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1729376258" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1729376258" defer></script>
-    <script src="/js/theme.js?1729376258" defer></script>
+    <script src="/js/clipboard.min.js?1729379283" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1729379283" defer></script>
+    <script src="/js/theme.js?1729379283" defer></script>
   </body>
 </html>
